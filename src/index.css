@@ -6,3 +6,11 @@
   --color-brand-accent: #2b3a67;
   --color-brand-white: #ffffff;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
