@@ -5,6 +5,7 @@ import WhyChooseGrihamate from "./components/home/WhyChooseGrihamate";
 import AboutSection from "./components/home/AboutSection";
 import MissionVision from "./components/home/MissionVision";
 import ContactSection from "./components/home/ContactSection";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <AboutSection />
       <MissionVision />
       <ContactSection />
+      <Footer />
     </>
   );
 }
