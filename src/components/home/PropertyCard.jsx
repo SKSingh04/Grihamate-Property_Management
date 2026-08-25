@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function PropertyCard({ property }) {
   return (
     <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -11,7 +13,7 @@ function PropertyCard({ property }) {
 
         {/* Property Tag */}
         {property.tag && (
-          <span className="absolute left-4 top-4 rounded-full bg-[#FDCB58] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[#2B3A67]">
+          <span className="absolute left-4 top-4 rounded-full bg-[#FDCB58] px-3 py-1 text-sm font-semibold uppercase tracking-wide text-[#2B3A67]">
             {property.tag}
           </span>
         )}
@@ -53,12 +55,12 @@ function PropertyCard({ property }) {
         </div>
 
         {/* View Details */}
-        <button
-          type="button"
-          className="mt-6 w-full rounded-xl border border-[#2B3A67] px-4 py-3 text-sm font-semibold text-[#2B3A67] transition-colors duration-200 hover:bg-[#2B3A67] hover:text-white"
+        <Link
+          to={`/properties/${property.id}`}
+          className="mt-6 flex w-full items-center justify-center rounded-xl border border-[#2B3A67] px-6 py-3.5 text-sm font-semibold text-[#2B3A67] transition-colors duration-200 hover:bg-[#2B3A67] hover:text-white"
         >
           View Details
-        </button>
+        </Link>
       </div>
     </article>
   );

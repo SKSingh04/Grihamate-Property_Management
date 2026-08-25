@@ -1,5 +1,5 @@
 import PropertyCard from "./PropertyCard";
-import { featuredProperties } from "../../data/properties";
+import { featuredProperties } from "../../data/property";
 
 function FeaturedProperties() {
   return (
@@ -11,7 +11,7 @@ function FeaturedProperties() {
 
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#2B3A67]">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FDCB58]">
             Featured Properties
           </p>
 
