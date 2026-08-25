@@ -7,7 +7,7 @@ function ContactSection() {
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#2B3A67]">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FDCB58]">
             Contact Us
           </p>
 
@@ -126,7 +126,7 @@ function ContactSection() {
                   </p>
 
                   <p className="mt-1 text-base font-medium text-[#0F172A]">
-                    Connaught Place, New Delhi — 110001
+                       Noida, Uttar Pradesh
                   </p>
                 </div>
               </div>
