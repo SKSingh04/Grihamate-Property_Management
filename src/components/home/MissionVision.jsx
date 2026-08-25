@@ -53,7 +53,7 @@ function MissionVision() {
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#2B3A67]">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FDCB58]">
             Our Purpose
           </p>
 
