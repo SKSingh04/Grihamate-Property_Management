@@ -126,7 +126,7 @@ function ContactSection() {
                     href="mailto:info@Grihamate.com"
                     className="mt-1 block text-base font-medium text-[#0F172A] transition-colors hover:text-[#2B3A67]"
                   >
-                    info@Grihamate.com
+                    grihamate@gmail.com
                   </a>
                 </div>
               </div>

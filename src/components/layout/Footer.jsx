@@ -88,13 +88,11 @@ function Footer() {
                 href="mailto:info@Grihamate.com"
                 className="block break-all text-sm leading-6 text-white/70 transition-colors hover:text-white"
               >
-                info@Grihamate.com
+                grihamate@gmail.com
               </a>
 
               <p className="text-sm leading-6 text-white/70">
-                Connaught Place,
-                <br />
-                New Delhi — 110001
+                Noida
               </p>
             </div>
           </div>
