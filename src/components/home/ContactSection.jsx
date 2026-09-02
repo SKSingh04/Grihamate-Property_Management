@@ -1,4 +1,37 @@
+import { useState } from "react";
+
 function ContactSection() {
+  const [status, setStatus] = useState("idle");
+  // idle | sending | success | error
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    setStatus("sending");
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mppavnwd", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        form.reset();
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch{
+      setStatus("error");
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -76,7 +109,6 @@ function ContactSection() {
                     aria-hidden="true"
                   >
                     <rect x="3" y="5" width="18" height="14" rx="2" />
-
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -115,7 +147,6 @@ function ContactSection() {
                       strokeLinejoin="round"
                       d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"
                     />
-
                     <circle cx="12" cy="10" r="2.5" />
                   </svg>
                 </div>
@@ -126,7 +157,7 @@ function ContactSection() {
                   </p>
 
                   <p className="mt-1 text-base font-medium text-[#0F172A]">
-                       Noida, Uttar Pradesh
+                    Noida, Uttar Pradesh
                   </p>
                 </div>
               </div>
@@ -134,7 +165,7 @@ function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <form className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5">
             {/* Name + Email */}
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
@@ -150,6 +181,7 @@ function ContactSection() {
                   type="text"
                   name="name"
                   placeholder="Your name"
+                  required
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-[#0F172A] outline-none transition-all placeholder:text-slate-400 focus:border-[#2B3A67] focus:bg-white focus:ring-2 focus:ring-[#2B3A67]/10"
                 />
               </div>
@@ -167,6 +199,7 @@ function ContactSection() {
                   type="email"
                   name="email"
                   placeholder="you@example.com"
+                  required
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-[#0F172A] outline-none transition-all placeholder:text-slate-400 focus:border-[#2B3A67] focus:bg-white focus:ring-2 focus:ring-[#2B3A67]/10"
                 />
               </div>
@@ -204,17 +237,33 @@ function ContactSection() {
                 name="message"
                 rows="5"
                 placeholder="Tell us what you're looking for..."
+                required
                 className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-[#0F172A] outline-none transition-all placeholder:text-slate-400 focus:border-[#2B3A67] focus:bg-white focus:ring-2 focus:ring-[#2B3A67]/10"
               />
             </div>
 
             {/* Submit */}
             <button
-              type="button"
-              className="w-full rounded-xl bg-[#2B3A67] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#202D52] hover:shadow-md"
+              type="submit"
+              disabled={status === "sending"}
+              className="w-full rounded-xl bg-[#2B3A67] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#202D52] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
             >
-              Send Message
+              {status === "sending" ? "Sending..." : "Send Message"}
             </button>
+
+            {/* Success Message */}
+            {status === "success" && (
+              <p className="rounded-xl bg-green-50 px-4 py-3 text-center text-sm font-medium text-green-700">
+                Message sent successfully! We'll get back to you shortly.
+              </p>
+            )}
+
+            {/* Error Message */}
+            {status === "error" && (
+              <p className="rounded-xl bg-red-50 px-4 py-3 text-center text-sm font-medium text-red-700">
+                Something went wrong. Please try again or contact us directly.
+              </p>
+            )}
           </form>
         </div>
       </div>
