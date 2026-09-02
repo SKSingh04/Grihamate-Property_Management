@@ -85,7 +85,7 @@ function Footer() {
               </a>
 
               <a
-                href="mailto:info@Grihamate.com"
+                href="mailto:grihamate@gmail.com"
                 className="block break-all text-sm leading-6 text-white/70 transition-colors hover:text-white"
               >
                 grihamate@gmail.com

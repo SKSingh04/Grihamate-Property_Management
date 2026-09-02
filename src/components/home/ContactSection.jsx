@@ -27,7 +27,7 @@ function ContactSection() {
       } else {
         setStatus("error");
       }
-    } catch (error) {
+    } catch{
       setStatus("error");
     }
   };
@@ -246,7 +246,7 @@ function ContactSection() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full rounded-xl bg-[#2B3A67] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#202D52] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
+              className="w-full rounded-xl bg-[#2B3A67] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#202D52] hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
             >
               {status === "sending" ? "Sending..." : "Send Message"}
             </button>
