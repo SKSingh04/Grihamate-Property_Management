@@ -1,5 +1,5 @@
 import { getPropertyMediaUrl } from "../lib/propertyMedia";
-import property2 from "../assets/images/modern-apartment-image.jpg";
+import rentApartment from "../assets/properties/2BHK-1BHK/Main.jpeg";
 import property3 from "../assets/images/family-house-image.jpg";
 import niralaImageMain from "../assets/properties/Nirala Trio 3BHK/Main.jpeg";
 
@@ -39,7 +39,7 @@ export const featuredProperties = [
     title: "Modern Apartment",
     price: "₹15K-₹30K",
     location: "Noida and Noida Extension",
-    image: property2,
+    image: rentApartment,
     tag: "Rent",
     gallery: [
       getPropertyMediaUrl("2BHK-1BHK", "11.jpeg"),

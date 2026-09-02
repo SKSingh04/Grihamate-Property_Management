@@ -93,6 +93,8 @@ function Footer() {
 
               <p className="text-sm leading-6 text-white/70">
                 Noida
+                <br/>
+                Uttar Pradesh
               </p>
             </div>
           </div>
