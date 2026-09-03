@@ -34,35 +34,35 @@ function Footer() {
 
             <nav className="mt-5 flex flex-col gap-3">
               <a
-                href="#"
+                href="/"
                 className="text-sm text-white/70 transition-colors hover:text-white"
               >
                 Home
               </a>
 
               <a
-                href="#properties"
+                href="/#properties"
                 className="text-sm text-white/70 transition-colors hover:text-white"
               >
                 Properties
               </a>
 
               <a
-                href="#why-grihamate"
+                href="/#why-grihamate"
                 className="text-sm text-white/70 transition-colors hover:text-white"
               >
                 Why Grihamate
               </a>
 
               <a
-                href="#about"
+                href="/#about"
                 className="text-sm text-white/70 transition-colors hover:text-white"
               >
                 About Us
               </a>
 
               <a
-                href="#contact"
+                href="/#contact"
                 className="text-sm text-white/70 transition-colors hover:text-white"
               >
                 Contact

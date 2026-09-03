@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import grihamateIcon from "../../assets/images/GrihamateICON-color.svg";
 import grihamateWordmark from "../../assets/images/GrihamateWordmark-Color.svg";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Properties", href: "#properties" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", to: "/" },
+  { label: "Properties", to: "/#properties" },
+  { label: "About", to: "/#about" },
+  { label: "Contact", to: "/#contact" },
 ];
 
 function MenuIcon({ isOpen }) {
@@ -22,29 +23,14 @@ function MenuIcon({ isOpen }) {
     >
       {isOpen ? (
         <>
-          <path
-            strokeLinecap="round"
-            d="M6 6l12 12"
-          />
-          <path
-            strokeLinecap="round"
-            d="M18 6L6 18"
-          />
+          <path strokeLinecap="round" d="M6 6l12 12" />
+          <path strokeLinecap="round" d="M18 6L6 18" />
         </>
       ) : (
         <>
-          <path
-            strokeLinecap="round"
-            d="M4 6h16"
-          />
-          <path
-            strokeLinecap="round"
-            d="M4 12h16"
-          />
-          <path
-            strokeLinecap="round"
-            d="M4 18h16"
-          />
+          <path strokeLinecap="round" d="M4 6h16" />
+          <path strokeLinecap="round" d="M4 12h16" />
+          <path strokeLinecap="round" d="M4 18h16" />
         </>
       )}
     </svg>
@@ -66,7 +52,7 @@ function Navbar() {
       >
         {/* Brand */}
         <a
-          href="#home"
+          href="/"
           onClick={closeMenu}
           className="flex items-center gap-3"
           aria-label="Grihamate Home"
@@ -87,23 +73,23 @@ function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-9 md:flex">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
+            <Link
+              key={link.to}
+              to={link.to}
               className="text-sm font-medium text-[#2B3A67] transition-colors duration-200 hover:text-[#FDCB58]"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* Desktop CTA */}
-        <a
-          href="#contact"
+        <Link
+          to="/#contact"
           className="hidden rounded-xl bg-[#2B3A67] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#FDCB58] hover:text-[#2B3A67] hover:shadow-md md:inline-flex"
         >
           Get Started
-        </a>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -126,23 +112,23 @@ function Navbar() {
         >
           <div className="mx-auto flex max-w-7xl flex-col px-6 py-4">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <Link
+                key={link.to}
+                to={link.to}
                 onClick={closeMenu}
                 className="border-b border-slate-100 py-3 text-sm font-medium text-[#2B3A67] transition-colors last:border-0 hover:text-[#FDCB58]"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
 
-            <a
-              href="#contact"
+            <Link
+              to="/#contact"
               onClick={closeMenu}
               className="mt-4 inline-flex justify-center rounded-xl bg-[#2B3A67] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#FDCB58] hover:text-[#2B3A67]"
             >
               Get Started
-            </a>
+            </Link>
           </div>
         </div>
       )}
