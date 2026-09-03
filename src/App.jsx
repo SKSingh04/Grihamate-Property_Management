@@ -13,7 +13,7 @@ import PropertyDetails from "./pages/PropertyDetails";
 
 function App() {
   return (
-    <BrowserRouter  basename="/Grihamate-Property_Management">
+    <BrowserRouter>
       <Routes>
         {/* Homepage */}
         <Route

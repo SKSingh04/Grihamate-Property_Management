@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/Grihamate-Property_Management/',
+  base: '/',
   plugins: [
     react(),
     tailwindcss(),
